@@ -1,0 +1,26 @@
+<section id="thanks">
+	<div class="thanks-text">
+
+		{{#if errors}}
+			<p>
+				Oops! There is something wrong!<br>
+				Error: {{errors}}
+			</p>
+		{{/if}}
+
+
+		<p>
+			Thank you {{name}} {{surname}} for registration!
+		</p>
+		<p>
+			Now you are ready to sign a petition. The things only you need to
+		</p>
+		<p>
+			<a href="/signin"><span style="font-weight: bold; color: #f6d365;">SIGN IN</span></a>
+		</p>
+		<p>
+			<a href="/petitions"><span style="font-weight: bold; color: #f6d365;">See all the petitions here.</span></a>
+		</p>
+	</div>
+
+</section>

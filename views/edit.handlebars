@@ -1,0 +1,70 @@
+<section id="registration">
+	<div class="welcome-text">
+		<div class="registration">
+			<div>
+				<h2>Edit Your Profile</h2>
+				{{#if errors}}
+					<p>Oops! There is something wrong!</p>
+				{{#errors}}
+					<p class='error'>{{this.text}}.</p>
+				{{/errors}}
+				{{/if}}
+			</div>
+			<form action="/edit" method="POST">
+
+				<div class="form-group">
+					<label for="name">Name:</label>
+					<input value="{{name}}" type="text" id="edit-form-name" class="form-control" id="name" placeholder="Enter your name" name="name">
+				</div>
+				<div class="form-group">
+					<label for="surname">Surname:</label>
+					<input value="{{surname}}" type="text" id="edit-form-surname" class="form-control" id="surname" placeholder="Enter your surname" name="surname">
+				</div>
+				<div class="form-group">
+					<label for="email">Email:</label>
+					<input value="{{email}}" type="email" id="edit-form-email" class="form-control" id="email" placeholder="Enter your email" name="email">
+				</div>
+				<div class="form-group">
+					<label for="age">Age:</label>
+					<input value="{{age}}" type="text" id="edit-form-age" class="form-control" id="age" placeholder="Enter your age" name="age">
+				</div>
+				<div class="form-group">
+					<label for="city">City:</label>
+					<input value="{{city}}" type="text" id="edit-form-city" class="form-control" id="city" placeholder="Enter your city" name="city">
+				</div>
+				<div class="form-group">
+					<label for="webpage">Personal webpage:</label>
+					<input value="{{webpage}}" type="text" id="edit-form-webpage" class="form-control" id="webpage" placeholder="Enter your personal webpage" name="webpage">
+				</div>
+				<input type="hidden" name="_csrf" value="{{csrfToken}}">
+				<button id= "edit-btn" type="submit" class="btn btn-primary"> Submit </button>
+
+			</form>
+		</div>
+	</div>
+
+	<div class="welcome-text">
+		<div class="registration">
+			<div id= "change-password-btn" type="button" class="btn btn-primary"> <a style="color: white; text-decoration: none" href="/change-password">Change Password</a> </div>
+		</div>
+	</div>
+
+</section>
+
+<script type="text/javascript">
+(function fn() {
+	function toConvertUpperCaseOnlyFirstLetter(str) {
+		return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+	}
+
+	setInterval(
+		function(){
+			$('#edit-form-name').val(toConvertUpperCaseOnlyFirstLetter($('#edit-form-name').val()));
+			$('#edit-form-surname').val(toConvertUpperCaseOnlyFirstLetter($('#edit-form-surname').val()));
+			$('#edit-form-city').val(toConvertUpperCaseOnlyFirstLetter($('#edit-form-city').val()));
+			$('input').css('color', '#000272');
+			$('input').css('font-weight', 'bold');
+		}, 100);
+
+})();
+</script>

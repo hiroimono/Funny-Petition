@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/all.css">
+	<title>Petition for Pyramids</title>
+</head>
+
+<body>
+	<header id="header">
+		<h2>
+			<a href="/"><i class="fas fa-feather-alt fa-2x"></i>
+				Sign a Petition
+			</a>
+		</h2>
+		<nav>
+			<ul>
+				<li>
+					<a href="/">Home</a>
+				</li>
+				<li>
+					<a href="/petition">All Petitions</a>
+				</li>
+				<li>
+					<a href="/petitions/add">Sign a new Petition</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+	<section id="container">
+		<section class="jeneric">
+			<p>
+				Why hasn't a new pyramid been built for 3000 years?
+			</p>
+			<p>
+				Write a petition to start again the pyramid constructions.
+			</p>
+		</section>
+		<div class="main-container">
+			<div class="iframe">
+				<iframe style="border-radius:10px" src="Kitty/index.html" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+
+			<div class="main">
+				<div class="info">
+					<p>
+						Please sign this petition to start reconstructions of the pyramids again after 3000 years!
+					</p>
+				</div><br>
+				<form action="/" method="POST" class="form">
+					<div class="input-field">
+						<div class="label">
+							<p>Name : </p>
+						</div>
+						<div class="input">
+							<input type="text" name="name" id="name" class="input-box" placeholder="name" maxlength="100">
+						</div>
+					</div>
+					<div class="input-field">
+						<div class="label">
+							<p>Surname : </p>
+						</div>
+						<div class="input">
+							<input type="text" name="surname" id="surname" class="input-box" placeholder="surname" maxlength="100">
+						</div>
+					</div>
+					<div class="input-field">
+						<div class="label">
+							<p>Email : </p>
+						</div>
+						<div class="input">
+							<input type="text" name="email" id="email" class="input-box" placeholder="email" maxlength="100">
+						</div>
+					</div>
+					<div class="input-field canvas-field">
+						<div class="label">
+							<p>Please sign here : </p>
+						</div>
+						<div class="canvas">
+							<canvas></canvas>
+							<button type="submit" name="submit">Sign it now!</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+
+	<footer id="footer">
+		<h2>
+			<a href="/"><i class="fas fa-at"></i></i>
+				Raise Your Voice Initiative Berlin 2019
+			</a>
+		</h2>
+	</footer>
+
+	<script src="script.js" charset="utf-8"></script>
+</body>
+
+</html>

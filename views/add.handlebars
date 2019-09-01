@@ -1,0 +1,51 @@
+<section id="registration">
+	<div class="welcome-text">
+		<div class="registration">
+			<div>
+				<h2>Add a new patition</h2>
+				{{#if errors}}
+					<p>Oops! There is something wrong!</p>
+				{{#errors}}
+					<p class='error'>{{this.text}}.</p>
+				{{/errors}}
+				{{/if}}
+			</div>
+			<form action="/add" method="POST">
+
+				<div class="form-group">
+					<label for="petition_name">Petition Name:</label>
+					<input type="text" id="edit-form-petition_name" class="form-control" id="petition_name" placeholder="Enter a petition name" name="petition_name">
+				</div>
+				<div class="form-group">
+					<label for="petition_to">To Whom?:</label>
+					<input type="text" id="edit-form-petition_to" class="form-control" id="petition_to" placeholder="Enter a related person or public/private agency name" name="petition_to">
+				</div>
+				<div class="form-group">
+					<label for="subject">Subject:</label>
+					<input type="email" id="edit-form-subject" class="form-control" id="subject" placeholder="Explain your petition's subject" name="subject">
+				</div>
+				<input type="hidden" name="_csrf" value="{{csrfToken}}">
+				<button id= "edit-btn" type="submit" class="btn btn-primary"> Submit </button>
+
+			</form>
+		</div>
+	</div>
+</section>
+
+<script type="text/javascript">
+(function fn() {
+	function toConvertUpperCaseOnlyFirstLetter(str) {
+		return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+	}
+
+	setInterval(
+		function(){
+			$('#edit-form-petition_name').val(toConvertUpperCaseOnlyFirstLetter($('#edit-form-petition_name').val()));
+			$('#eedit-form-petition_to').val(toConvertUpperCaseOnlyFirstLetter($('#edit-form-petition_to').val()));
+			$('#eedit-form-subject').val(toConvertUpperCaseOnlyFirstLetter($('#edit-form-subject').val()));
+			$('input').css('color', '#000272');
+			$('input').css('font-weight', 'bold');
+		}, 100);
+
+})();
+</script>

@@ -1,0 +1,69 @@
+<section id="registration">
+
+	{{!-- <div class="iframe">
+		<iframe style="border-radius:10px" src="../public/Kitty/index.html" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div> --}}
+
+	<div class="welcome-text">
+
+		<div class="registration">
+			<div>
+				<h1>Why hasn't a new pyramid been built for 3000 years? Write a petition to start again the pyramid constructions.</h1>
+				{{#if errors}}
+					<p>
+						Oops! There is something wrong!<br>
+					</p>
+				{{/if}}
+				{{#if err}}
+					{{#err}}
+						<p style="color:yellow; font-size:25px;">
+						{{this.detail}}
+						</p>
+					{{/err}}
+				{{/if}}
+
+			</div>
+			<form method="POST">
+				<div class="form-group">
+					<label for="name">Name:</label>
+					<input type="text" class="form-control" id="name" placeholder="Enter your name" name="name">
+				</div>
+				<div class="form-group">
+					<label for="surname">Surname:</label>
+					<input type="text" class="form-control" id="surname" placeholder="Enter your surname" name="surname">
+				</div>
+				<div class="form-group">
+					<label for="email">Email:</label>
+					<input type="email" class="form-control" id="email" placeholder="Enter your email" name="email">
+				</div>
+				<div class="form-group sign">
+					<label for="signature">Please sign here : </label>
+					<input type='hidden' name="signature" id="signatureID">
+					<canvas id="signature-pad" class="signature-pad"></canvas>
+					<div class='cnvs-btn'>
+						<div id="undo">Undo</div><div id="clear">Clear</div>
+					</div>
+				</div>
+				<input type="hidden" name="_csrf" value="{{csrfToken}}">
+				<button id="submit-button" type="submit" class="btn btn-primary">Sign it now!</button>
+			</form>
+		</div>
+	</div>
+</section>
+
+<script type="text/javascript">
+(function fn() {
+	function toConvertUpperCaseOnlyFirstLetter(str) {
+		return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+	}
+
+	setInterval(
+		function(){
+			$('#name').val(toConvertUpperCaseOnlyFirstLetter($('#name').val()));
+			$('#surname').val(toConvertUpperCaseOnlyFirstLetter($('#surname').val()));
+			$('input').css('color', '#000272');
+			$('input').css('font-weight', 'bold');
+		}, 100);
+
+})();
+</script>

@@ -1,0 +1,4 @@
+[0818/221125.301:ERROR:process_info.cc(329)] VirtualQueryEx: Eriþim engellendi. (0x5)
+[0818/221125.303:ERROR:process_info.cc(556)] ReadMemoryInfo failed
+[0818/221125.303:ERROR:process_memory_win.cc(39)] Failed to initialize ProcessInfo.
+[0818/221125.303:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: Sona ermekte olan bir iþleme eriþmeye çalýþýldý. (0xc000010a)
